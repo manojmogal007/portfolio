@@ -4,8 +4,8 @@ on:
   push:
 
   pull_request:
-   brances:
-    -main
+    brances:
+      - main
 
 
 

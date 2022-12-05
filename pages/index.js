@@ -41,8 +41,12 @@ export default function Home() {
                       <a key={el.id} href={el.html_url}><div style={{border:'1px solid grey',borderRadius:'7px',margin:'8px',padding:'10px'}}>
                           <h3>{el.full_name}</h3>
                           <div style={{display:'flex',justifyContent:'space-between'}}>
+                          <div style={{display:'flex',justifyContent:'space-between',width:'50%'}}>
                           <h4>☆ {el.stargazers_count}</h4>
+                          <h4>fork : {el.forks_count}</h4>
+                          </div>
                           <h4>{el.language}</h4>
+
                           </div>
                       </div></a>
                     ))
