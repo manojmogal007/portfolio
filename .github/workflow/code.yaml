@@ -1,0 +1,51 @@
+name: portfolio
+
+on:
+  push:
+
+  pull_request:
+   brances:
+    -main
+
+
+
+jobs:
+  build:
+    name: Build
+    run-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm i
+      - name: build project
+        run: npm run build
+      - name: Upload artifact in order to deploy
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+
+ deploy:
+  name: deploy
+  run-on: ubuntu-latest
+  needs: build
+
+  steps: 
+    - name: Download artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: production-files
+        path: ./build
+
+    - name: Deploy to github pages
+      uses: peaceiris/actions-gh-pages@v3
+      with: 
+        github-token: ${{secrets.M_TOKEN}}
+        publish-dir: ./bulid
