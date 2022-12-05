@@ -13,15 +13,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{display:'flex'}}>
-        <div style={{width:'30%',border:'1px solid teal'}}>
-          <div style={{border:'1px solid red'}} >
+        <div style={{width:'30%',margin:'10px',border:'1px solid grey'}}>
+          <div style={{border:'1px solid red',margin:'6px',border:'1px solid grey',padding:'15px'}} >
             <img src={data.avatar_url} style={{width:'45%',margin:'auto',borderRadius:'50%'}}></img>
-            <p>{data.login}</p>
+            <a href={data.html_url}><p>{data.login}</p></a>
             <p>Full-stack developer | ReactJS | HTML | Javascript | CSS | Chakra-UI</p>
             <a href='https://drive.google.com/file/d/1lc9TtM077mUGi0uSnV7u60tNXNxYhqM9/view?usp=share_link'><button style={{margin:'15px'}}>Resume</button></a>
             <a href={data.html_url} ><button>Follow</button></a>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',marginTop:'10px'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',marginTop:'10px',margin:'6px',border:'1px solid grey',padding:'20px'}}>
             <div style={{border:'1px solid black',borderRadius:'3px',margin:'2px'}}>ReactJS</div>
             <div style={{border:'1px solid black',borderRadius:'3px',margin:'2px'}}>Javascript</div>
             <div style={{border:'1px solid black',borderRadius:'3px',margin:'2px'}}>HTML</div>
@@ -31,9 +31,14 @@ export default function Home() {
             <div style={{border:'1px solid black',borderRadius:'3px',margin:'2px'}}>Typescript</div>
             {/* <div style={{border:'1px solid black',borderRadius:'3px',margin:'2px'}}>ReactJS</div> */}
           </div>
+          <div style={{border:'1px solid grey' ,margin:'6px',padding:'20px'}}>
+          <div style={{width:'200px',margin:'auto' }}>
+            <h4>Fresher</h4>
+        </div>
+          </div>
         </div>
         {/* ------------------------------------------------------ */}
-        <div style={{border:'1px solid yellow',width:'70%'}}>
+        <div style={{border:'1px solid grey',width:'70%',margin:'10px'}}>
             <div style={{width:'200px',margin:'auto'}}><h2 >Projects</h2></div>
             <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr'}}>
                   {
